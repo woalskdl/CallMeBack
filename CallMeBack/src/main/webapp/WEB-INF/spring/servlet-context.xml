@@ -18,6 +18,17 @@
     	<property name="suffix" value=".jsp"/>
     </bean>
     
+    <!-- tiles ViewResolver -->
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<property name="order" value="1" />
+		<!-- order : Resolver 컨트롤러 처리의 우선 순위. 먼저 tiles.xml로 보내서 찾게한다. -->
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions" value="/WEB-INF/tiles.xml" />
+	</bean>
+    
     <!-- 파일 입출력 -->
     <bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
