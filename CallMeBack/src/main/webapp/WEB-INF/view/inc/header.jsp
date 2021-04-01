@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <header>
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 		<div class="container">
-			<a class="navbar-brand" href="#"> <img
+			<a class="navbar-brand" href="/main"> <img
 				src="http://placehold.it/150x50?text=Logo" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -14,13 +15,23 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="#">Add Project</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Your Projects</a>
+					<c:if test="${ !empty sessionScope.id }">
+						<li class="nav-item"><a class="nav-link">--- 님 환영합니다.	</a></li>
+					</c:if>
+					<li class="nav-item active"><a class="nav-link" href="/addProject/new">Add Project</a></li>
+					<c:if test="${ empty sessionScope.id }">
+						<li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>
+						<li class="nav-item"><a class="nav-link" href="/signUp">Sign up</a></li>
+					</c:if>
+					<c:if test="${ !empty sessionScope.id }">
+						<li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+						<li class="nav-item"><a class="nav-link" href="/logout">Sign out</a></li>
+					</c:if>
+					<li class="nav-item"><a class="nav-link" href="projects">Your Projects</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<br>
 </header>

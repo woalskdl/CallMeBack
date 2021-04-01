@@ -9,13 +9,20 @@
 <meta charset="EUC-KR">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<!-- <style>
-		footer{
-			background: #313131;
-			height: 100px;
-			padding:20px;
+<style>
+	@media ( min-width : 768px) {
+		.container {
+			width: 750px;
 		}
-	</style> -->
+	}
+	
+	@media ( min-width : 992px) {
+		.container {
+			width: 1200px;
+		}
+	}
+</style>
+
 <title><tiles:getAsString name="title" /></title>
 </head>
 
@@ -24,7 +31,9 @@
 	<tiles:insertAttribute name="header" />
 
 	<!-- <body>  -->
-	<tiles:insertAttribute name="body" />
+	<div class="container">
+		<tiles:insertAttribute name="body" />
+	</div>
 
 	<!-- <footer> -->
 	<tiles:insertAttribute name="footer" />
