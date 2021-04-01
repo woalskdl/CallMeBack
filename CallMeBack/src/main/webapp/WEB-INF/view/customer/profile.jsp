@@ -5,7 +5,7 @@
 <c:if test="${ empty sessionScope.id }">
 	<script>
 		alert("로그인이 필요합니다.");
-		<meta http-equiv="Refresh" content="0;url=/login">
+		document.location.href="/login";
 	</script>
 </c:if>
 <c:if test="${ !empty sessionScope.id }">
