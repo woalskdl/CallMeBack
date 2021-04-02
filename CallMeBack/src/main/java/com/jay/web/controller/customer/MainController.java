@@ -38,9 +38,22 @@ public class MainController {
 		System.out.println("access SearchLoginInfo");
 		return "customer.searchLoginInfo";
 	}
+	
 	@RequestMapping("projects")
 	public String projects() {
 		System.out.println("access Projects");
 		return "customer.projects";
+	}
+	
+	@RequestMapping("projectInfo")
+	public String projectInfo() {
+		System.out.println("access ProjectInfo");
+		return "customer.projectInfo";
+	}
+
+	@RequestMapping("addComment")
+	public String addComment() {
+		System.out.println("access addComment");
+		return "customer.addComment";
 	}
 }

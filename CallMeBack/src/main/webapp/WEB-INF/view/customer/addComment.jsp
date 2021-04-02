@@ -11,6 +11,12 @@
 	#finishedProjects td{
 		color : gray;
 	}
+	
+	#addComment{
+		font-size : 14px;
+		position : relative;
+		left : 2%;
+	}
 </style>
 <div class="container" id="ongoingProjects">
 	<h2>프로젝트 목록</h2>
@@ -44,6 +50,33 @@
 				</td>
 				<td>
 					<button id="del" class="btn btn-sm btn-info">신규</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="9" style="text-align:center;">
+					<div id="addComment">
+						<form class="form-inline">
+							<div class="form-group">
+								<label for="commentTitle">제목</label>
+								&nbsp;
+								<input type="text" class="form-control" id="commentTitle" placeholder="title">
+							</div>
+							&emsp;
+							<div class="form-group ">
+								<label for="commentContent">내용</label>
+								&nbsp;
+								<input type="text" class="form-control" id="commentContent" placeholder="comment" style="width:600px">
+							</div>
+							&emsp;
+							<div class="checkbox">
+								<label>
+									<input type="checkbox">&nbsp;CallMe!
+								</label>
+							</div>
+							&emsp;
+							<button id="update" class="btn btn-sm btn-outline-primary" name="${ item.getItem_number() }" onclick="edit(this)">업데이트</button>
+						</form>
+					</div>
 				</td>
 			</tr>
 			<tr>

@@ -6,7 +6,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 		<div class="container">
 			<a class="navbar-brand" href="/main"> <img
-				src="http://placehold.it/150x50?text=Logo" alt="">
+				src="image/logo.jpg" alt="CallMeBack">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -16,7 +16,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<c:if test="${ !empty sessionScope.id }">
-						<li class="nav-item"><a class="nav-link">--- 님 환영합니다.	</a></li>
+						<li class="nav-item"><a class="nav-link">--- 님 환영합니다.&nbsp;</a></li>
 					</c:if>
 					<li class="nav-item active"><a class="nav-link" href="/addProject/new">Add Project</a></li>
 					<c:if test="${ empty sessionScope.id }">

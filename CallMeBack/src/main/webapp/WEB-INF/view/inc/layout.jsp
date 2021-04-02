@@ -21,6 +21,9 @@
 			width: 1200px;
 		}
 	}
+	a{
+		color : black;
+	}
 </style>
 
 <title><tiles:getAsString name="title" /></title>
