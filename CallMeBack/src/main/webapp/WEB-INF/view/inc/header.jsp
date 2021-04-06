@@ -6,7 +6,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 		<div class="container">
 			<a class="navbar-brand" href="/main"> <img
-				src="image/logo.jpg" alt="CallMeBack">
+				src="/image/logo.jpg" alt="CallMeBack">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -18,7 +18,7 @@
 					<c:if test="${ !empty sessionScope.id }">
 						<li class="nav-item"><a class="nav-link">--- 님 환영합니다.&nbsp;</a></li>
 					</c:if>
-					<li class="nav-item active"><a class="nav-link" href="/addProject/new">Add Project</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/addProject/newProject">Add Project</a></li>
 					<c:if test="${ empty sessionScope.id }">
 						<li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>
 						<li class="nav-item"><a class="nav-link" href="/signUp">Sign up</a></li>
@@ -27,7 +27,7 @@
 						<li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
 						<li class="nav-item"><a class="nav-link" href="/logout">Sign out</a></li>
 					</c:if>
-					<li class="nav-item"><a class="nav-link" href="projects">Your Projects</a>
+					<li class="nav-item"><a class="nav-link" href="/projects">Your Projects</a>
 					</li>
 				</ul>
 			</div>

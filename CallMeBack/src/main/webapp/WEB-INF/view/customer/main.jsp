@@ -17,7 +17,7 @@
 	<hr class="my-4">
 	<br>
 	<div class="cols-sm-3" style="text-align : center;">
-		<p><a class="btn btn-primary btn-lg" href="/addProject/new" role="button">새 프로젝트 시작</a></p>
+		<p><a class="btn btn-primary btn-lg" href="/addProject/newProject" role="button">새 프로젝트 시작</a></p>
 	</div>
 </div>
 <br><br>

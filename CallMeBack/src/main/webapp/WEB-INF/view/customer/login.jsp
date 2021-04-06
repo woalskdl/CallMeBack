@@ -26,7 +26,7 @@
 				<button type="button" class="btn btn-secondary btn-lg" onclick="#">아이디 / 비밀번호 찾기</button>
 			</div>
 			<br>
-			<button type="button" class="btn btn-outline-secondary btn-block" onclick="#">비회원 프로젝트 조회</button>
+			<button type="button" class="btn btn-outline-secondary btn-block" onclick="location.href='/checkProjectId'">비회원 프로젝트 조회</button>
 		</form>
 	</div>
 </div>
