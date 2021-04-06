@@ -48,6 +48,11 @@ public class ProjectController {
 		System.out.println("access PicSize");
 		return "project.picSize";
 	}
+	@RequestMapping("projectDetail")
+	public String projectDetail() {
+		System.out.println("access ProjectDetail");
+		return "project.projectDetail";
+	}
 	
 	@RequestMapping("video")
 	public String video() {

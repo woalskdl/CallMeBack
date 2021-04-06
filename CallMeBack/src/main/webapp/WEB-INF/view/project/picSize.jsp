@@ -10,7 +10,7 @@
 	<div class="btnList">
 		<ul class="btnGroup">
 			<li class="btn">
-				<a href="login">
+				<a href="projectDetail">
 					<div class="screen">
 						<div class="top">ALL</div>
 						<div class="bottom">인쇄 및 웹 배포 등 다용도로 사용될 사진</div>
@@ -22,7 +22,7 @@
 				</a>
 			</li>
 			<li class="btn">
-				<a href="login">
+				<a href="projectDetail">
 					<div class="screen">
 						<div class="top">BIG</div>
 						<div class="bottom">현수막, 대형 포스터 등 대화면 인쇄용 고화질 사진</div>
@@ -34,7 +34,7 @@
 				</a>
 			</li>
 			<li class="btn">
-				<a href="login">
+				<a href="projectDetail">
 					<div class="screen">
 						<div class="top">NORMAL</div>
 						<div class="bottom">팜플렛, 책자 등 일반 인쇄용 고화질 사진</div>
@@ -46,7 +46,7 @@
 				</a>
 			</li>
 			<li class="btn">
-				<a href="login">
+				<a href="projectDetail">
 					<div class="screen">
 						<div class="top">WEB</div>
 						<div class="bottom">라인 커머스 등록 및 SNS마케팅 사진</div>
