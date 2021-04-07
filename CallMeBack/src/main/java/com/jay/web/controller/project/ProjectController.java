@@ -53,6 +53,16 @@ public class ProjectController {
 		System.out.println("access ProjectDetail");
 		return "project.projectDetail";
 	}
+	@RequestMapping("askLogin")
+	public String askLogin() {
+		System.out.println("access AskLogin");
+		return "project.askLogin";
+	}
+	@RequestMapping("fin")
+	public String fin() {
+		System.out.println("access AddProjectFin");
+		return "project.addProjectFin";
+	}
 	
 	@RequestMapping("video")
 	public String video() {
