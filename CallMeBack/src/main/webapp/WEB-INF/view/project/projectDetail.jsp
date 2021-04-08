@@ -57,15 +57,24 @@
 			</td>
 			<th>연락 가능 시간</th>
 			<td>
-				<select id="hourStart" title="부터" class="col-xs-4"></select>
-				&nbsp;~&nbsp;
-				<select id="hourEnd" title="까지" class="col-xs-4"></select>
+				<div class="requestLayer">
+					<select id="hourStart" title="부터" class="col-xs-4"></select>
+					&nbsp;~&nbsp;
+					<select id="hourEnd" title="까지" class="col-xs-4"></select>
+				</div>
 			</td>
 		</tr>
 		<tr>
 			<th>프로젝트 상세</th>
-			<td colspan="4">
+			<td>
 				<font color="gray"><small>프로젝트에 관한 기타 상세 설명을 기입해주세요.</small></font>
+			</td>
+			<th>레퍼런스 파일</th>
+			<td>
+				<form name="fileForm" action="requestupload" method="post" enctype="multipart/form-data">
+					<input multiple="multiple" type="file" name="file">
+					<input type="submit" class="btn btn-sm btn-outline-primary" value="전송">
+				</form>
 			</td>
 		</tr>
 		<!-- 상세는 페이지 이동없이 입력하고 버튼 클릭해서 바로 수정가능하도록. -->
