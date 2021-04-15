@@ -27,7 +27,7 @@
 						<li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
 						<li class="nav-item"><a class="nav-link" href="/logout">Sign out</a></li>
 					</c:if>
-					<li class="nav-item"><a class="nav-link" href="/projects">Your Projects</a>
+					<li class="nav-item"><a class="nav-link" href="/project/list">Your Projects</a>
 					</li>
 				</ul>
 			</div>

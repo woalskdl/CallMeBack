@@ -59,5 +59,19 @@
 		<version>3.0.8</version>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+	<dependency>
+	    <groupId>commons-dbcp</groupId>
+	    <artifactId>commons-dbcp</artifactId>
+	    <version>1.4</version>
+	</dependency>
+	
+	<!-- mybatis -->
+	<dependency>
+	  <groupId>org.mybatis</groupId>
+	  <artifactId>mybatis</artifactId>
+	  <version>3.4.5</version>
+	</dependency>
+	
   </dependencies>
 </project>
