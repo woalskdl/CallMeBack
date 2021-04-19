@@ -16,7 +16,6 @@ public class CustomerServiceImp implements CustomerService{
 	public ProjectCnt getProjectCnt(String id) {
 		
 		int newCnt = customerDao.getNewCnt(id);
-		System.out.println(customerDao.getNewCnt(id));
 		int deadlineCnt = customerDao.getDeadlineCnt(id);
 		int myCnt = customerDao.getMyCnt(id);
 		int totalCnt = customerDao.getTotalCnt();
