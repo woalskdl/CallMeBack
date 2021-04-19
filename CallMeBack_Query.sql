@@ -45,8 +45,15 @@ CREATE TABLE PCOMMENT
     PID         NUMBER,             -- 관련 프로젝트 ID
     REGDATE     DATE                -- 등록일
 );
+---------------------------------------------------------
 
+CREATE VIEW PROJECTVIEW
+AS
+SELECT P.PID, P.REGID, P.REGDATE, P.DEADLINE, P.CONT1 AS DIV, P.PRODUCERID, COUNT(C.CID) AS COMMENTCNT, MAX(C.REGDATE) AS RECENTUP 
+FROM PROJECT P LEFT OUTER JOIN PCOMMENT C ON P.PID = C.PID GROUP BY P.PID, P.REGID, P.REGDATE, P.DEADLINE, P.CONT1, P.PRODUCERID
+ORDER BY P.REGDATE DESC;
 
+SELECT * FROM PROJECTVIEW;
 
 ---------------------------------------------------------
 

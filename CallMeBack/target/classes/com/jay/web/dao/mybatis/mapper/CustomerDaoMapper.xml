@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.web.dao.CustomerDao">
+
+	<select id="getNewCnt" resultType="int">
+		SELECT COUNT(PID) FROM PROJECTVIEW 
+		<trim prefix = "WHERE" prefixOverrides = "AND | OR">
+			<if test="value != null and value != ''">
+				REGID = #{value} 
+			</if>
+		AND RECENTUP BETWEEN SYSDATE - 2 AND SYSDATE</trim>
+	</select>
+	
+	<select id="getDeadlineCnt" resultType="int">
+		SELECT COUNT(PID) FROM PROJECTVIEW 
+		<trim prefix = "WHERE" prefixOverrides = "AND | OR">
+			<if test="value != null and value != ''">
+				REGID = #{value} 
+			</if>
+		AND DEADLINE BETWEEN SYSDATE AND SYSDATE + 5</trim>
+	</select>
+	
+	<select id="getMyCnt" resultType="int">
+		SELECT COUNT(PID) FROM PROJECTVIEW 
+		<where>
+			<if test="value != null and value != ''">
+				REGID = #{value} 
+			</if>
+		</where>
+	</select>
+	
+	<select id="getTotalCnt" resultType="int">
+		SELECT COUNT(PID) FROM PROJECTVIEW
+	</select>
+	
+	<select id="getTodayCnt" resultType="int">
+		SELECT COUNT(PID) FROM PROJECTVIEW 
+		WHERE RECENTUP BETWEEN SYSDATE-2 AND SYSDATE
+	</select>
+
+	<select id="getImgCnt" resultType="int">
+		SELECT COUNT(PID) FROM PROJECTVIEW 
+		WHERE DIV = 'img'
+	</select>
+
+	<select id="getVideoCnt" resultType="int">
+		SELECT COUNT(PID) FROM PROJECTVIEW 
+		WHERE DIV = 'video'
+	</select>
+	
+</mapper>
