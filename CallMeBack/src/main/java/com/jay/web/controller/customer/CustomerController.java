@@ -7,9 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.jay.web.service.CustomerService;
-import com.jay.web.service.dao.PcommentDAO;
-import com.jay.web.service.dto.ProjectCnt;
+import com.jay.web.entity.ProjectCnt;
+import com.jay.web.service.customer.CustomerService;
 
 @Controller
 @RequestMapping("/")
@@ -22,34 +21,37 @@ public class CustomerController {
 	public String main(Model model) throws SQLException {
 	System.out.println("access Main");
 	
-	ProjectCnt pCnt = cs.getProjectCnt();
+	String id = "woalskdl";
+	ProjectCnt pCnt = cs.getProjectCnt(id);
 	model.addAttribute("pCnt",pCnt);
 	
-	return "customer.main.main";
+	System.out.println("id : " + id + " - " + pCnt);
+	
+	return "customer.main";
 	}
 	
 
 	@RequestMapping("login")
 	public String login() {
 		System.out.println("access Login");
-		return "customer.main.login";
+		return "customer.login";
 	}
 
 	@RequestMapping("signUp")
 	public String signUp() {
 		System.out.println("access SignUp");
-		return "customer.main.signUp";
+		return "customer.signUp";
 	}
 	
 	@RequestMapping("profile")
 	public String profile() {
 		System.out.println("access Profile");
-		return "customer.main.profile";
+		return "customer.profile";
 	}
 	
 	@RequestMapping("searchLoginInfo")
 	public String searchLoginInfo() {
 		System.out.println("access SearchLoginInfo");
-		return "customer.main.searchLoginInfo";
+		return "customer.searchLoginInfo";
 	}
 }
