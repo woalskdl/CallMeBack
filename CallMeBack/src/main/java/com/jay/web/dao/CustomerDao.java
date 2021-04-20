@@ -1,5 +1,7 @@
 package com.jay.web.dao;
 
+import com.jay.web.entity.Member;
+
 public interface CustomerDao {
 
 	int getNewCnt(String id);
@@ -9,5 +11,9 @@ public interface CustomerDao {
 	int getTodayCnt();
 	int getImgCnt();
 	int getVideoCnt();
+	
+	Member login(Member m);
+	
+	int checkDouble(String input, String field, String userId);
 	
 }

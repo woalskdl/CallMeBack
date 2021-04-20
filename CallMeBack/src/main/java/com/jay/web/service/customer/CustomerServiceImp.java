@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jay.web.dao.CustomerDao;
+import com.jay.web.entity.Member;
 import com.jay.web.entity.ProjectCnt;
 
 @Service
@@ -26,6 +27,22 @@ public class CustomerServiceImp implements CustomerService{
 		ProjectCnt pCnt = new ProjectCnt(newCnt, deadlineCnt, myCnt, totalCnt, todayCnt, imgCnt, videoCnt); 
 		
 		return pCnt;
+	}
+
+	@Override
+	public Member login(Member m) {
+		
+		m = customerDao.login(m);
+		
+		return m;
+	}
+
+	@Override
+	public int checkDouble(String input, String field, String userId) {
+		
+		int check = customerDao.checkDouble(input, field, userId);
+		
+		return check;
 	}
 	
 }

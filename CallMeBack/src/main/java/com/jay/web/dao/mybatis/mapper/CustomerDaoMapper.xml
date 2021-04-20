@@ -50,4 +50,16 @@
 		WHERE DIV = 'video'
 	</select>
 	
+	<select id="login" parameterType="com.jay.web.entity.Member" resultType="com.jay.web.entity.Member">
+		SELECT * FROM MEMBER 
+		WHERE ID = #{id} AND PWD = #{pwd}
+	</select>
+	
+	<select id="checkDouble" resultType="int">
+		SELECT COUNT(ID) FROM (
+		    SELECT * FROM MEMBER 
+		    WHERE ID != #{userId}
+		)WHERE ${field} = #{input};
+	</select>
+	
 </mapper>

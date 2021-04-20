@@ -25,14 +25,23 @@
 <c:set var="pCnt" value="${ pCnt }"/>
 
 <div class="alert alert-info" role="alert">
-	<a href="/info/list" class="alert-link">금일 업데이트 내역 ${ pCnt.getNewCnt() } 건이 있습니다.</a>
+	<a href="/info/list" class="alert-link">
+		금일 업데이트 내역 
+		<c:if test="${ empty sessionScope.userId }">-</c:if>
+		<c:if test="${ !empty sessionScope.userId }">${ pCnt.getNewCnt() }</c:if>
+		 건이 있습니다.
+	</a>
 </div>
 <br>
 <table class="table table-striped">
 	<tbody>
 		<tr>
 			<td><h2><small>나의 프로젝트</small></h2></td>
-			<td><span class="text-primary"> ${ pCnt.getMyCnt() } 건 </span></td>
+			<td><span class="text-primary">
+				<c:if test="${ empty sessionScope.userId }">-</c:if>
+				<c:if test="${ !empty sessionScope.userId }">${ pCnt.getMyCnt() }</c:if>
+				 건
+			</span></td>
 		</tr>
 		<tr>
 			<td><h2><small>현재 DB에 등록된 프로젝트</small></h2></td>

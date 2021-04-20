@@ -15,15 +15,15 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<c:if test="${ !empty sessionScope.id }">
-						<li class="nav-item"><a class="nav-link">--- 님 환영합니다.&nbsp;</a></li>
+					<c:if test="${ !empty sessionScope.member }">
+						<li class="nav-item"><a class="nav-link">${ member.getName() } 님 환영합니다.&nbsp;</a></li>
 					</c:if>
 					<li class="nav-item active"><a class="nav-link" href="/add/newProject">Add Project</a></li>
-					<c:if test="${ empty sessionScope.id }">
+					<c:if test="${ empty sessionScope.member }">
 						<li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>
 						<li class="nav-item"><a class="nav-link" href="/signUp">Sign up</a></li>
 					</c:if>
-					<c:if test="${ !empty sessionScope.id }">
+					<c:if test="${ !empty sessionScope.member }">
 						<li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
 						<li class="nav-item"><a class="nav-link" href="/logout">Sign out</a></li>
 					</c:if>

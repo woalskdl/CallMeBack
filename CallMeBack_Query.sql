@@ -3,6 +3,7 @@ CREATE TABLE MEMBER
     ID          VARCHAR2 (50),      -- 회원 ID
     PWD         NVARCHAR2(50),      -- 회원 PW
     NAME        NVARCHAR2(50),      -- 회원 이름
+    EMAIL       NVARCHAR2(55),      -- 회원 이메일
     REGDATE     DATE                -- 회원가입 날짜
 );
 
