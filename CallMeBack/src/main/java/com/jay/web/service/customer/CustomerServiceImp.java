@@ -48,7 +48,7 @@ public class CustomerServiceImp implements CustomerService{
 	@Override
 	public int updateProfile(Member m) {
 		int result = customerDao.updateProfile(m);
-		
+		System.out.println(m);
 		return result;
 	}
 

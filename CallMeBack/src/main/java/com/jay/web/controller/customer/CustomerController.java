@@ -98,20 +98,23 @@ public class CustomerController {
 	}
 	
 	@RequestMapping("updateProfilePro")
-	public String updateProfilePro(HttpServletRequest request) {
+	public String updateProfilePro(HttpServletRequest request, HttpSession session) {
 		System.out.println("access UpdateProfilePro");
 		
+		Member member = (Member)session.getAttribute("member");
+		String userId = member.getId();
+		
 		String userName = request.getParameter("name");
-		String userId = request.getParameter("id");
 		String userPwd = request.getParameter("password");
 		String userEmail = request.getParameter("email");
 		
 		Member m = new Member(userId, userPwd, userName, userEmail);
+		System.out.println(m);
 		int result = cs.updateProfile(m);
 		
 		String page = "";
 		if(result == 1) {
-			page = "customer.UpdateProfilePro";
+			page = "customer.updateProfilePro";
 		}else {
 			page = "error";
 		}
@@ -123,5 +126,11 @@ public class CustomerController {
 	public String searchLoginInfo() {
 		System.out.println("access SearchLoginInfo");
 		return "customer.searchLoginInfo";
+	}
+	
+	@RequestMapping("errorPage")
+	public String error() {
+		System.out.println("access ErrorPage");
+		return "customer.errorPage";
 	}
 }

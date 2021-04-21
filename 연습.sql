@@ -60,3 +60,7 @@ SELECT COUNT(ID) FROM (
     SELECT * FROM MEMBER 
     WHERE ID != 'gilbro'
 )WHERE EMAIL = 'woalskdl@gmail.com';
+
+SELECT NVL(COUNT(ID),0) FROM 
+	(SELECT * FROM MEMBER WHERE ID != 'woalskdl')
+WHERE EMAIL = 'woalskdl@gmail.com';

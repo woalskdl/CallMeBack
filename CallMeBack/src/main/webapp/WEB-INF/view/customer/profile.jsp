@@ -24,23 +24,23 @@
 				<label for="name">이름</label>
 				<font size="2em" color="#fc5858" class="nCk">&nbsp;이름을 공란으로 둘 수 없습니다.</font>
 				<input type="text" class="form-control" 
-					id="name" name="name" oninput="checkName()" value="${ member.getName() }" required>
+					id="name" name="name" value="${ member.getName() }" required>
 			</div>
 			<div class="form-group">
 				<label for="email">E-MAIL</label>
 				<font size="2em" color="#fc5858" class="emCk">&nbsp;올바른 이메일 양식을 입력해주세요.</font>
-				<input type="email" class="form-control"
-					id="email" name="email" oninput="checkEmail()" value="${ member.getEmail() }" required>
+				<input type="text" class="form-control"
+					id="email" name="email" value="${ member.getEmail() }" required>
 			</div>
 			<div class="form-group">
 				<label for="password">PASSWORD</label> <input type="password"
-					class="form-control" id="password" name="password" oninput="checkPwd()" value="${ member.getPwd() }" required>
+					class="form-control" id="password" name="password" value="${ member.getPwd() }" required>
 			</div>
 			<div class="form-group">
 				<label for="passwordConfirm">PASSWORD CONFIRM</label>
 				<font size="2em" color="#fc5858" class="pwCk">&nbsp;비밀번호를 확인해주세요.</font>
 				<input type="password"
-					class="form-control" id="passwordCk" oninput="checkPwd()" value="${ member.getPwd() }" required>
+					class="form-control" id="passwordCk" name="passwordCk" value="${ member.getPwd() }" required>
 			</div>
 			<br>
 			<div class="button-group" style="text-align: center; padding-top : 20px;">
