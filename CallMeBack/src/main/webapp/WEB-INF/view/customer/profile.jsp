@@ -8,42 +8,44 @@
 		document.location.href="/login";
 	</script>
 </c:if>
-<c:if test="${ !empty sessionScope.member }">
 <script src="/js/jquery-3.6.0.min.js"></script>
 <script src="/js/profile.js"></script>
+
 <div class="row">
 	<div style="float:none; margin:0 auto; padding-top : 100px;">
-		<form style="width : 455px">
+		<form method="post" action="/updateProfilePro" style="width : 455px">
 			<h1>회원가입 정보</h1>
 			<br>
 			<div class="form-group">
-				<label for="name">이름</label> <input type="text" class="form-control"
-					id="name" placeholder="${ member.getName() }" disabled>
-			</div>
-			<div class="form-group">
 				<label for="id">ID</label> <input type="text" class="form-control"
-					id="ID" placeholder="${ member.getId() }" disabled>
+					id="id" name="id" value="${ member.getId() }" disabled>
 			</div>
 			<div class="form-group">
-				<label for="email">E-MAIL</label> <input type="email" class="form-control"
-					id="email" name="email" value="${ member.getEmail() }">
+				<label for="name">이름</label>
+				<font size="2em" color="#fc5858" class="nCk">&nbsp;이름을 공란으로 둘 수 없습니다.</font>
+				<input type="text" class="form-control" 
+					id="name" name="name" oninput="checkName()" value="${ member.getName() }" required>
 			</div>
-			<div class="checkDoubleEmail" id="checkDoubleEmail">
-				
+			<div class="form-group">
+				<label for="email">E-MAIL</label>
+				<font size="2em" color="#fc5858" class="emCk">&nbsp;올바른 이메일 양식을 입력해주세요.</font>
+				<input type="email" class="form-control"
+					id="email" name="email" oninput="checkEmail()" value="${ member.getEmail() }" required>
 			</div>
 			<div class="form-group">
 				<label for="password">PASSWORD</label> <input type="password"
-					class="form-control" id="password" value="비밀번호">
+					class="form-control" id="password" name="password" oninput="checkPwd()" value="${ member.getPwd() }" required>
 			</div>
 			<div class="form-group">
-				<label for="passwordConfirm">PASSWORD CONFIRM</label> <input type="password"
-					class="form-control" id="password" value="비밀번호 확인">
+				<label for="passwordConfirm">PASSWORD CONFIRM</label>
+				<font size="2em" color="#fc5858" class="pwCk">&nbsp;비밀번호를 확인해주세요.</font>
+				<input type="password"
+					class="form-control" id="passwordCk" oninput="checkPwd()" value="${ member.getPwd() }" required>
 			</div>
 			<br>
 			<div class="button-group" style="text-align: center; padding-top : 20px;">
-				<button type="button" class="btn btn-dark btn-lg" id="updateProfile">이메일 / 비밀번호 변경</button>
+				<input type="submit" class="btn btn-primary btn-lg" id="updateProfile" disabled="disabled" value="이메일 / 비밀번호 변경">
 			</div>
 		</form>
 	</div>
 </div>
-</c:if>

@@ -15,5 +15,6 @@ public interface CustomerDao {
 	Member login(Member m);
 	
 	int checkDouble(String input, String field, String userId);
+	int updateProfile(Member m);
 	
 }

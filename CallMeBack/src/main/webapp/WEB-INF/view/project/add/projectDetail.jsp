@@ -38,7 +38,7 @@
 			<th>제작자</th>
 			<td>
 				<div class="selfLayer">
-					<input class="form-control" id="myName" type="text" placeholder="myName" disabled>
+					<input class="form-control" id="myName" type="text" placeholder="${ member.getName() }" disabled>
 				</div>
 				<div class="requestLayer">
 					<input class="form-control" id="producerName" type="text" placeholder="제작자의 ID를 입력하세요.">

@@ -44,5 +44,12 @@ public class CustomerServiceImp implements CustomerService{
 		
 		return check;
 	}
-	
+
+	@Override
+	public int updateProfile(Member m) {
+		int result = customerDao.updateProfile(m);
+		
+		return result;
+	}
+
 }

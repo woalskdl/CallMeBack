@@ -14,4 +14,7 @@ public interface CustomerService {
 //	- 중복 확인
 	int checkDouble(String input, String field, String userId);
 
+//	- 개인정보 수정
+	int updateProfile(Member m);
+
 }

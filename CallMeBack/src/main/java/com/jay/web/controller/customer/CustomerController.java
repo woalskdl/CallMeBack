@@ -1,6 +1,7 @@
 package com.jay.web.controller.customer;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,11 +22,17 @@ public class CustomerController {
 	@Autowired
 	private CustomerService cs;
 	
-	@RequestMapping(value="main", method= {RequestMethod.GET, RequestMethod.POST})
-	public String main(Model model, HttpServletRequest request) {
+	@RequestMapping("main")
+	public String main(Model model, HttpSession session) {
 		System.out.println("access Main");
 		
-		String userId = request.getParameter("userId");
+		Member member = (Member)session.getAttribute("member");
+		String userId = null;
+		if(member != null) {
+			userId = member.getId();
+			session.setAttribute("member", member);
+		}
+		
 		ProjectCnt pCnt = cs.getProjectCnt(userId);
 		model.addAttribute("pCnt",pCnt);
 		
@@ -47,9 +54,6 @@ public class CustomerController {
 		
 		String userId = request.getParameter("userId");
 		String userPwd = request.getParameter("userPwd");
-		
-		System.out.println(userId);
-		System.out.println(userPwd);
 		
 		Member m = new Member(userId, userPwd);
 		m = cs.login(m);
@@ -79,20 +83,40 @@ public class CustomerController {
 	}
 
 	@RequestMapping("updateProfile")
-	public String updateProfile(Model model, HttpServletRequest request) {
+	public String updateProfile() {
 		System.out.println("access UpdateProfile");
-		
 		
 		return "customer.UpdateProfile";
 	}
 
 	// 중복 확인
-	@RequestMapping(value="checkDouble", method = RequestMethod.GET)
-	@ResponseBody
-	public int checkDouble(@RequestParam("input") String input, @RequestParam("field") String field, @RequestParam("userId") String userId) {
+	@RequestMapping("checkDouble")
+	public @ResponseBody int checkDouble(String input, String field, String userId) {
 		System.out.println("access CheckDouble");
 		
 		return cs.checkDouble(input, field, userId);
+	}
+	
+	@RequestMapping("updateProfilePro")
+	public String updateProfilePro(HttpServletRequest request) {
+		System.out.println("access UpdateProfilePro");
+		
+		String userName = request.getParameter("name");
+		String userId = request.getParameter("id");
+		String userPwd = request.getParameter("password");
+		String userEmail = request.getParameter("email");
+		
+		Member m = new Member(userId, userPwd, userName, userEmail);
+		int result = cs.updateProfile(m);
+		
+		String page = "";
+		if(result == 1) {
+			page = "customer.UpdateProfilePro";
+		}else {
+			page = "error";
+		}
+		
+		return page;
 	}
 	
 	@RequestMapping("searchLoginInfo")

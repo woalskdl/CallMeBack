@@ -42,3 +42,21 @@ WHERE REGID = 'woalskdl';
 
 SELECT COUNT(PID) FROM PROJECTVIEW 
 WHERE DIV = 'img';
+
+SELECT * FROM MEMBER;
+
+UPDATE MEMBER SET EMAIL='woalskdl@gmail.com' WHERE NAME='남재민';
+UPDATE MEMBER SET EMAIL='gilbro@naver.com' WHERE NAME='길브로';
+UPDATE MEMBER SET EMAIL='test@gmail.com' WHERE NAME='테스트';
+UPDATE MEMBER SET EMAIL='blog@naver.com' WHERE NAME='블로그';
+UPDATE MEMBER SET EMAIL='khd@naver.com' WHERE NAME='강호동';
+UPDATE MEMBER SET EMAIL='jkh@nate.com' WHERE NAME='조규현';
+UPDATE MEMBER SET EMAIL='smh@gmail.com' WHERE NAME='송민호';
+UPDATE MEMBER SET EMAIL='pjh@gmail.com' WHERE NAME='표지훈';
+UPDATE MEMBER SET EMAIL='ejw@hanmail.net' WHERE NAME='은지원';
+UPDATE MEMBER SET EMAIL='lsk@naver.com' WHERE NAME='이수근';
+
+SELECT COUNT(ID) FROM (
+    SELECT * FROM MEMBER 
+    WHERE ID != 'gilbro'
+)WHERE EMAIL = 'woalskdl@gmail.com';

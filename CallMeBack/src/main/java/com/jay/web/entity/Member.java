@@ -19,4 +19,12 @@ public class Member {
 	private String name;
 	private Date regdate;
 	private String email;
+	
+	public Member(@NonNull String id, @NonNull String pwd, String name, String email) {
+		super();
+		this.id = id;
+		this.pwd = pwd;
+		this.name = name;
+		this.email = email;
+	}
 }

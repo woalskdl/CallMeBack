@@ -56,10 +56,20 @@
 	</select>
 	
 	<select id="checkDouble" resultType="int">
-		SELECT COUNT(ID) FROM (
-		    SELECT * FROM MEMBER 
-		    WHERE ID != #{userId}
-		)WHERE ${field} = #{input};
+		SELECT NVL(COUNT(ID),0) FROM 
+		<if test="field != 'ID'">
+		(SELECT * FROM MEMBER WHERE ID != '${userId}')
+		</if> 
+		<if test="field == 'ID'">MEMBER </if>
+		WHERE ${field} = '${input}'
 	</select>
+	
+	<update id="updateProfile" parameterType="com.jay.web.entity.Member">
+		UPDATE SET
+			NAME = #{name},
+			PWD = #{pwd},
+			EMAIL = #{email} 
+		WHERE ID = #{id}
+	</update>
 	
 </mapper>
