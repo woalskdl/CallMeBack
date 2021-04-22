@@ -17,4 +17,7 @@ public interface CustomerService {
 //	- 개인정보 수정
 	int updateProfile(Member m);
 
+//	- 회원가입
+	int insertProfile(Member m);
+
 }

@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jay.web.entity.Member;
@@ -113,11 +111,32 @@ public class CustomerController {
 		int result = cs.updateProfile(m);
 		
 		String page = "";
-		if(result == 1) {
+		if(result == 1)
 			page = "customer.updateProfilePro";
-		}else {
+		else
 			page = "error";
-		}
+		
+		return page;
+	}
+
+	@RequestMapping("signUpPro")
+	public String signUpPro(HttpServletRequest request) {
+		System.out.println("access SignUpPro");
+		
+		String userId = request.getParameter("id");
+		String userName = request.getParameter("name");
+		String userPwd = request.getParameter("password");
+		String userEmail = request.getParameter("email");
+		
+		Member m = new Member(userId, userPwd, userName, userEmail);
+		System.out.println(m);
+		int result = cs.insertProfile(m);
+		
+		String page = "";
+		if(result == 1)
+			page = "customer.signUpPro";
+		else
+			page = "error";
 		
 		return page;
 	}

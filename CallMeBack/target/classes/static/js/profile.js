@@ -18,16 +18,29 @@ $(document).ready(function() {
 	passwordCk.addEventListener('input',checkPwd);
 	
 	function checkName(){
+		var nRegExp = /^[가-힣]{2,6}$/;
+		
 		if(!$('#name').val()){
+			nameCk = 0;
 			$(".nCk").show();
+			$(".nCk2").hide();
 			$("#updateProfile").prop("disabled", true);
 			$("#name").css("background-color", "#ffe0e0");
 		}else{
-			nameCk = 1;
-			$(".nCk").hide();
-			$("#name").css("background-color", "#e2ffe0");
-			if (nameCk == 1 && emailCk == 1 && pwdCk == 1) {
-				$("#updateProfile").prop("disabled", false);
+			if(nRegExp.test($('#name').val())){
+				nameCk = 1;
+				$(".nCk").hide();
+				$(".nCk2").hide();
+				$("#name").css("background-color", "#e2ffe0");
+				if (nameCk == 1 && emailCk == 1 && pwdCk == 1) {
+					$("#updateProfile").prop("disabled", false);
+				}
+			}else{
+				nameCk = 0;
+				$(".nCk").hide();
+				$(".nCk2").show();
+				$("#updateProfile").prop("disabled", true);
+				$("#name").css("background-color", "#ffe0e0");
 			}
 		}
 	}
@@ -37,7 +50,7 @@ $(document).ready(function() {
 		var field = "EMAIL";
 		var id = $('#id').val();
 		
-		var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		var eRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	
 		$.ajax({
 			data: {
@@ -48,32 +61,33 @@ $(document).ready(function() {
 			url: "/checkDouble",
 			success: function(data) {
 				if (input == "" && data == '0') {
-					$(".emCk").hide();
-					$("#updateProfile").prop("disabled", true);
-					$("#updateProfile").css("background-color", "#aaaaaa");
-					$("#email").css("background-color", "#ffe0e0");
 					emailCk = 0;
+					$(".emCk").show();
+					$(".emCk2").hide();
+					$("#updateProfile").prop("disabled", true);
+					$("#email").css("background-color", "#ffe0e0");
 				} else if (data == '0') {
-					if(input.match(regExp) != null){
-						$(".emCk").hide();
-						$("#email").css("background-color", "#e2ffe0");
+					if(eRegExp.test($('#email').val())){
 						emailCk = 1;
+						$(".emCk").hide();
+						$(".emCk2").hide();
+						$("#email").css("background-color", "#e2ffe0");
 						if (nameCk == 1 && emailCk == 1 && pwdCk == 1) {
 							$("#updateProfile").prop("disabled", false);
 						}
 					}else{
-						$(".emCk").show();
-						$("#updateProfile").prop("disabled", true);
-						$("#updateProfile").css("background-color", "#aaaaaa");
-						$("#email").css("background-color", "#ffe0e0");
 						emailCk = 0;
+						$(".emCk").show();
+						$(".emCk2").hide();
+						$("#updateProfile").prop("disabled", true);
+						$("#email").css("background-color", "#ffe0e0");
 					}
 				} else {
-					$(".emCk").hide();
-					$("#updateProfile").prop("disabled", true);
-					$("#updateProfile").css("background-color", "#aaaaaa");
-					$("#email").css("background-color", "#ffe0e0");
 					emailCk = 0;
+					$(".emCk").hide();
+					$(".emCk2").show();
+					$("#updateProfile").prop("disabled", true);
+					$("#email").css("background-color", "#ffe0e0");
 				}
 			}
 		});
@@ -83,21 +97,22 @@ $(document).ready(function() {
 		var input = $('#password').val();
 		var reinput = $('#passwordCk').val();
 		if (reinput == "" && (input != reinput || input == reinput)) {
+			pwdCk = 0;
 			$("#updateProfile").prop("disabled", true);
 			$('#password').css("background-color", "#ffe0e0");
 			$('#passwordCk').css("background-color", "#ffe0e0");
 		}
 		else if (input == reinput) {
+			pwdCk = 1;
 			$(".pwCk").hide();
 			$('#password').css("background-color", "#e2ffe0");
 			$('#passwordCk').css("background-color", "#e2ffe0");
-			pwdCk = 1;
 			if (nameCk == 1 && emailCk == 1 && pwdCk == 1) {
 				$("#updateProfile").prop("disabled", false);
 			}
 		} else if (input != reinput) {
+			pwdCk = 0;
 			$(".pwCk").show();
-			pwdCheck = 0;
 			$("#updateProfile").prop("disabled", true);
 			$('#password').css("background-color", "#ffe0e0");
 			$('#passwordCk').css("background-color", "#ffe0e0");

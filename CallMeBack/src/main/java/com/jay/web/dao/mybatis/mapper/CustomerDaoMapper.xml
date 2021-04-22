@@ -58,7 +58,7 @@
 	<select id="checkDouble" resultType="int">
 		SELECT NVL(COUNT(ID),0) FROM 
 		<if test="field != 'ID'">
-		(SELECT * FROM MEMBER WHERE ID != '${userId}')
+		(SELECT * FROM MEMBER WHERE ID != '${userId}') 
 		</if> 
 		<if test="field == 'ID'">MEMBER </if>
 		WHERE ${field} = '${input}'
@@ -71,5 +71,10 @@
 			EMAIL = #{email} 
 		WHERE ID = #{id}
 	</update>
+
+	<insert id="insertProfile" parameterType="com.jay.web.entity.Member">
+		INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) 
+		VALUES(#{id}, #{pwd}, #{name}, #{email}, SYSDATE)
+	</insert>
 	
 </mapper>

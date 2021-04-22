@@ -58,16 +58,16 @@ SELECT * FROM PROJECTVIEW;
 
 ---------------------------------------------------------
 
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('woalskdl', '1234', '남재민', 'woalskdl@gmail.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('gilbro', '4567', '길브로', 'gilbro@naver.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('test', 'test', '테스트', 'test@gmail.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('blog', 'b1234', '블로그', 'blog@naver.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('khd', '1234', '강호동', 'khd@naver.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('jkh', '3456', '조규현', 'jkh@nate.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('smh', '5678', '송민호', 'smh@gmail.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('pjh', '6789', '표지훈', 'pjh@gmail.com', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('ejw', '7890', '은지원', 'ejw@hanmail.net', SYSDATE);
-INSERT INTO MEMBER(ID, PWD, NAME, REGDATE) VALUES('lsk', '2345', '이수근', 'lsk@naver.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('woalskdl', '1234', '남재민', 'woalskdl@gmail.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('gilbro', '4567', '길브로', 'gilbro@naver.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('test', 'test', '테스트', 'test@gmail.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('blog', 'b1234', '블로그', 'blog@naver.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('khd', '1234', '강호동', 'khd@naver.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('jkh', '3456', '조규현', 'jkh@nate.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('smh', '5678', '송민호', 'smh@gmail.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('pjh', '6789', '표지훈', 'pjh@gmail.com', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('ejw', '7890', '은지원', 'ejw@hanmail.net', SYSDATE);
+INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, REGDATE) VALUES('lsk', '2345', '이수근', 'lsk@naver.com', SYSDATE);
 
 -- SELECT * FROM MEMBER;
 

@@ -23,12 +23,14 @@
 			<div class="form-group">
 				<label for="name">이름</label>
 				<font size="2em" color="#fc5858" class="nCk">&nbsp;이름을 공란으로 둘 수 없습니다.</font>
+				<font size="2em" color="#fc5858" class="nCk2">&nbsp;이름을 확인해주세요.</font>
 				<input type="text" class="form-control" 
 					id="name" name="name" value="${ member.getName() }" required>
 			</div>
 			<div class="form-group">
 				<label for="email">E-MAIL</label>
 				<font size="2em" color="#fc5858" class="emCk">&nbsp;올바른 이메일 양식을 입력해주세요.</font>
+				<font size="2em" color="#fc5858" class="emCk2">&nbsp;이메일이 중복됩니다.</font>
 				<input type="text" class="form-control"
 					id="email" name="email" value="${ member.getEmail() }" required>
 			</div>
